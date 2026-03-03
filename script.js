@@ -42,6 +42,7 @@ async function fetchMovies(searchTerm) {
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     sortSelect.value = 'default';
     displayMovies(currentMovies);
+    const limitedList = fullArray.slice(0, 6);
   } else {
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     moviesGrid.innerHTML = '<p>No movies found.</p>';
@@ -99,4 +100,4 @@ function sortMovies(sortType) {
 }
 
 // Load Fast movies on start
-fetchMovies('Fast');
+fetchMovies('Disney');
