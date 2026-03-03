@@ -1,22 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast Cars Movie Project</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FES Movies API ref</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Fast Cars Movie Search</h1>
-        <form id="search-form">
-            <input type="text" id="search-input" placeholder="Search for a movie...">
-            <button type="submit">Search</button>
-        </form>
-    </header>
-    <main id="movie-container">
-        <!-- Movie cards will be dynamically inserted here -->
-    </main>
-    <script src="script.js"></script>
+  <nav>
+    <div class="logo">FES Movies</div>
+    <form class="search-form" id="searchForm">
+      <input class="search-form__input" type="text" id="searchInput" placeholder="Search movies..." required>
+      <button class="search-form__button" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <main>
+    <div class="controls">
+      <p id="resultsInfo">Showing: Marvel</p>
+      <div>
+        <label for="sortSelect">Sort:</label>
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="a-z">A - Z</option>
+          <option value="z-a">Z - A</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="movies-grid" id="moviesGrid"></div>
+  </main>
+
+  <footer>
+    <p>Created by FES mentor Wandag.  Powered by OMDBapi.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
