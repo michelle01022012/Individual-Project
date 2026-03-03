@@ -36,21 +36,13 @@ async function fetchMovies(searchTerm) {
 
   const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}`);
   const data = await response.json();
-
-  if (data.Response === 'True') {
-    const limitedList = fullArray.slice(0, 6);
-    // React Example
-  return (
-  <ul>
-    {limitedList.map(item => <li key={item.id}>{item.name}</li>)}
-  </ul>
-  );
-}
-    currentMovies = data.Search;
+if (data.Response === 'True') {
+    currentMovies = data.Search.slice(0, 6);
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     sortSelect.value = 'default';
     displayMovies(currentMovies);
-  } else {
+
+    } else {
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     moviesGrid.innerHTML = '<p>No movies found.</p>';
     currentMovies = [];
@@ -107,4 +99,4 @@ function sortMovies(sortType) {
 }
 
 // Load Fast movies on start
-fetchMovies('Disney');
+fetchMovies('Fast');
