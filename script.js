@@ -38,11 +38,18 @@ async function fetchMovies(searchTerm) {
   const data = await response.json();
 
   if (data.Response === 'True') {
+    const limitedList = fullArray.slice(0, 6);
+    // React Example
+  return (
+  <ul>
+    {limitedList.map(item => <li key={item.id}>{item.name}</li>)}
+  </ul>
+  );
+}
     currentMovies = data.Search;
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     sortSelect.value = 'default';
     displayMovies(currentMovies);
-    const limitedList = fullArray.slice(0, 6);
   } else {
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     moviesGrid.innerHTML = '<p>No movies found.</p>';
