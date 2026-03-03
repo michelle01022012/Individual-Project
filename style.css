@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  justify-content: center;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 }
 
 nav {
-  background: #333;
+  background: #091edb;
   color: white;
   padding: 15px;
   display: flex;
@@ -125,7 +126,7 @@ main {
 }
 
 footer {
-  background: #333;
+  background: #091edb;
   color: white;
   text-align: center;
   padding: 15px;
