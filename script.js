@@ -99,4 +99,4 @@ function sortMovies(sortType) {
 }
 
 // Load Fast movies on start
-fetchMovies('Fast');
+fetchMovies('movies');
