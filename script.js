@@ -19,7 +19,7 @@ searchForm.addEventListener('submit', (e) => {
 
 // Show skeleton loading cards
 function showSkeletons() {
-  const skeletons = Array(6).fill(0).map(() => `
+  const skeletons = Array(10).fill(0).map(() => `
     <div class="movie-card movie-card--skeleton">
       <div class="movie-card__img movie-card__img--skeleton"></div>
       <div class="movie-card__title movie-card__title--skeleton"></div>
