@@ -19,7 +19,7 @@ searchForm.addEventListener('submit', (e) => {
 
 // Show skeleton loading cards
 function showSkeletons() {
-  const skeletons = Array(10).fill(0).map(() => `
+  const skeletons = Array(06).fill(0).map(() => `
     <div class="movie-card movie-card--skeleton">
       <div class="movie-card__img movie-card__img--skeleton"></div>
       <div class="movie-card__title movie-card__title--skeleton"></div>
@@ -36,19 +36,19 @@ async function fetchMovies(searchTerm) {
 
   const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}`);
   const data = await response.json();
-if (data.Response === 'True') {
-    currentMovies = data.Search.slice(0, 6);
+  if (data.Response === 'True') {
+    const hasFast = data.Search.some(movie => movie.Title.toLowerCase().includes('fast'));
+    const limit = hasFast ? 6 : 10;
+    currentMovies = data.Search.slice(0, limit);
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     sortSelect.value = 'default';
     displayMovies(currentMovies);
-
-    } else {
+  } else {
     resultsInfo.textContent = `Showing: ${searchTerm}`;
     moviesGrid.innerHTML = '<p>No movies found.</p>';
     currentMovies = [];
   }
 }
-
 // Display movies
 function displayMovies(movies) {
   const html = movies.map(function(movie) {
@@ -98,5 +98,5 @@ function sortMovies(sortType) {
   displayMovies(sortedMovies);
 }
 
-// Load Fast movies on start
+// Load baseline movies on start
 fetchMovies('movies');
