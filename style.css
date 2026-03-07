@@ -31,6 +31,7 @@ nav {
 .search-form_input {
   display: flex;
   gap: 8px;
+  font-weight: bold;
 }
 
 .search-form {
@@ -42,6 +43,7 @@ nav {
   gap: 8px;
   margin: auto;
   flex-direction: column;
+  font-weight: bold;
 }
 
 main {
@@ -140,7 +142,7 @@ main {
 }
 
 footer {
-  background: #320235;
+  background: #49208f;
   color: white;
   text-align: center;
   padding: 15px;
