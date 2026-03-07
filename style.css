@@ -11,15 +11,15 @@ body {
 
 .banner-image {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1;
   opacity: 0.6;
 }
+figure {
+  margin: 0;
+  width: 100%;
+}
 
 nav {
-  background: #320235;
   color: white;
   height: 475px;
   display: flex;
@@ -35,6 +35,9 @@ nav {
 
 .search-form {
   z-index: 9;
+  position: absolute;
+  top: 80%;
+  right: 10%;
   display: flex;
   gap: 8px;
   margin: auto;
@@ -128,12 +131,16 @@ main {
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 footer {
-  background:  #320235;
+  background: #320235;
   color: white;
   text-align: center;
   padding: 15px;
